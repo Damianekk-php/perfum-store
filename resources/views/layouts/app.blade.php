@@ -58,6 +58,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('products.index') }}">Produkty</a>
+                                    <a class="dropdown-item" href="{{ route('welcome') }}">Strona główna</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
