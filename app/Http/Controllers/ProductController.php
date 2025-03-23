@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UpsertProductRequest;
 use App\Models\Product;
 use Exception;
 use Illuminate\Contracts\View\View;
@@ -30,9 +31,9 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UpsertProductRequest $request)
     {
-        $product = new Product($request->all());
+        $product = new Product($request->validated());
         if ($request->hasfile('image')) {
             $product->image_path = $request->file('image')->store('products', );
         }
@@ -64,9 +65,9 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Product $product)
+    public function update(UpsertProductRequest $request, Product $product)
     {
-        $product->fill($request->all());
+        $product->fill($request->validated());
         if ($request->hasfile('image')) {
             $product->image_path = $request->file('image')->store('products', );
         }
