@@ -42,7 +42,7 @@ class ProductController extends Controller
         }
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('status', 'Produkt został dodany!');
     }
 
     /**
@@ -77,7 +77,7 @@ class ProductController extends Controller
         }
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('status', 'Produkt został zaktualizowany!');
     }
 
     /**

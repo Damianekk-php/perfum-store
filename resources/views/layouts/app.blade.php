@@ -57,7 +57,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @can('isAdmin')
                                     <a class="dropdown-item" href="{{ route('products.index') }}">Produkty</a>
+                                    @endcan
                                     <a class="dropdown-item" href="{{ route('welcome') }}">Strona główna</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

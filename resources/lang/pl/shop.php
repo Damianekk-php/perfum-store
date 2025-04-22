@@ -19,6 +19,8 @@ return [
     ],
     'user' => [
         'index_title' => 'Lista użytkowników',
+        'surname' => 'Nazwisko',
+        'phone_number' => 'Numer telefonu',
         'status' => [
             'delete' => [
                 'success' => 'Użytkownik usunięty!'
