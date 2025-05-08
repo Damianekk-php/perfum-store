@@ -9,6 +9,8 @@ Auth::routes(['verify' => true]);
 Route::middleware(['auth', 'verified'])->group(function (){
     Route::resource('products', \App\Http\Controllers\ProductController::class)->middleware('can:isAdmin');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/cart/list', [App\Http\Controllers\CartController::class, 'index'])->name('cart.index');
+    Route::post('/cart/{product}', [App\Http\Controllers\CartController::class, 'store'])->name('cart.store');
 });
 
 
