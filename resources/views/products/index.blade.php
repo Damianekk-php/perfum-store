@@ -49,9 +49,14 @@
                                     E
                                 </button>
                             </a>
-                            <button class="btn btn-danger btn-sm delete" data-id="{{ $product->id }}">
-                                X
-                            </button>
+                            <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm delete" data-id="{{ $product->id }}">
+                                    X
+                                </button>
+                            </form>
+
                         </td>
                     </tr>
                 @endforeach
@@ -67,3 +72,4 @@
 @section('js-files')
     <script src="{{ asset('js/delete.js') }}"></script>
 @endsection
+
